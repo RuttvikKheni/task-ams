@@ -1,0 +1,230 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AMS",
+		"_postman_id": "f0720d98-99a1-1535-dd09-39180f0cbe2a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Appointment",
+			"description": "",
+			"item": [
+				{
+					"name": "Book appointment",
+					"request": {
+						"url": "http://localhost:3000/api/appointment/book",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer token",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"time\": \"11AM\",\n\t\"date\": \"08/24/2022\",\n\t\"doctor_id\": \"62cd9efbbde7dd062cfb3788\",\n\t\"patient_email\": \"email@gmail.com\"\n}\t"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patients",
+			"description": "",
+			"item": [
+				{
+					"name": "My appointments",
+					"request": {
+						"url": "http://localhost:3000/api/patient/appointments",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer token",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "My appointment",
+					"request": {
+						"url": "http://localhost:3000/api/patient/appointments/62cdbb52ae4fff2f112f98fd",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtoZW5pcnV0dmlrMjAwMUBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IlJ1dHR2aWsgS2hlbmkiLCJ1c2VydHlwZSI6InBhdGllbnQiLCJpYXQiOjE2NTc2MzcxOTcsImV4cCI6MTY1NzcyMzU5N30.SWzEIvoNMB5yMREBrtRSOhcrRhasw6ZOkPprDM0KAUA",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer token",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctors",
+			"description": "",
+			"item": [
+				{
+					"name": "My appointments",
+					"request": {
+						"url": "http://localhost:3000/api/doctor/appointments/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer token",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "My appointment",
+					"request": {
+						"url": "http://localhost:3000/api/doctor/appointments/62cda1fe0586524da5bb8418",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer token",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"description": "",
+			"item": [
+				{
+					"name": "Registartion users",
+					"request": {
+						"url": "http://localhost:3000/api/auth/registration/patient",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer token",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"username\",\n\t\"email\":\"email\",\n\t\"password\":\"strong password\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "login users",
+					"request": {
+						"url": "http://localhost:3000/api/auth/login/doctor",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer token",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"email\",\n\t\"password\":\"strong password\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"description": "",
+			"item": [
+				{
+					"name": "Get users",
+					"request": {
+						"url": "http://localhost:3000/api/admin/patient",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer token",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"url": "http://localhost:3000/api/admin/62cdd62783aeb2489c7f3097/delete",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer token",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server status",
+			"request": {
+				"url": "http://localhost:3000",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
